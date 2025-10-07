@@ -1,0 +1,53 @@
+@use 'sass:map';
+@use 'sass:color';
+@use 'sass:math';
+
+@use 'element-plus/theme-chalk/src/mixins/var' as *;
+@use 'element-plus/theme-chalk/src/mixins/function.scss' as *;
+@use './themes.scss' as *;
+
+@mixin f-set-css-color-rgb($themes,$type,$theme:'') {
+$color: map.get($themes,$theme,$type);
+  @include set-css-var-value(
+    ('color', $type, 'rgb'),
+    #{color.channel($color, 'red'),
+    color.channel($color, 'green'),
+    color.channel($color, 'blue')}
+  );
+}
+
+@mixin f-set-css-color-type($themes, $type, $theme: "") {
+  $baseColor: map.get($themes,$theme,$type);
+  @if $baseColor!=null {@include set-css-var-value(('color', $type), $baseColor);}
+  @each $i in (3, 5, 7, 8, 9) {
+    $color:map.get($themes, $theme,'#{$type}-light-#{$i}');
+    @if $color!=null {@include set-css-var-value(('color', $type, 'light', $i),$color);}
+  }
+  $color:map.get($themes, $theme,'#{$type}-dark-2');
+  @if $color!=null {@include set-css-var-value(('color', $type, 'dark', 2),$color);}
+}
+
+@mixin f-set-color-mix-level(
+  $type,
+  $number,
+  $mode: 'light',
+  $mix-color: $color-white,
+  $theme: ''
+) {
+  $themes: map.deep-merge(
+    (
+      $theme: (
+        '#{$type}-#{$mode}-#{$number}':
+          roundColor(
+            color.mix(
+              $mix-color,
+              map.get($themes,$theme, $type),
+              math.percentage(math.div($number, 10))
+            )
+          ),
+      ),
+    ),
+    $themes
+  ) !global;
+}
+

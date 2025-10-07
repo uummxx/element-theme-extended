@@ -1,0 +1,42 @@
+
+// @use 'sass:map';
+
+// // element-plus
+@use 'element-plus/theme-chalk/src/mixins/var' as *;
+@use 'element-plus/theme-chalk/src/mixins/mixins' as *;
+//  forward mixins
+@use './themes.scss' as *;
+
+@use './mixins.scss' as *;
+
+
+@each $class, $theme in $themes {
+  @each $type,$color in $theme {
+      @for $i from 1 through 9 {
+        @include f-set-color-mix-level($type, $i, 'light', $color-white,$class);
+      }
+    @include f-set-color-mix-level($type, 2, 'dark', $color-black, $class);
+  }
+};
+
+// for light
+:root {
+  color-scheme: light;
+  // --el-color-#{$type}
+  // --el-color-#{$type}-light-{$i}·
+  @each $type in $types{
+    @include f-set-css-color-rgb($themes,$type,'');
+    @include f-set-css-color-type($themes,$type);
+  }
+}
+
+// @debug $themes;
+@each $theme, $_ in $themes {
+  @if $theme !=''{
+    html.#{$theme}{
+      @each $type in $types{
+        @include f-set-css-color-type($themes,$type,$theme);
+      }
+    }
+  }
+};
