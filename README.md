@@ -110,11 +110,11 @@ toggleTheme('theme-1 dark') // 暗色
 
 ## 🔹 贡献与反馈
 
-如果你发现任何问题或者有功能建议，请提交 [Issues](https://github.com/BF-zh/element-theme-extended/issues) 或 Pull Request。
+如果你发现任何问题或者有功能建议，请提交 [Issues](https://github.com/uummxx/element-theme-extended/issues) 或 Pull Request。
 
 ---
 
 ## 🔹 授权协议
 
-MIT License © 2025 [BF-zh](https://github.com/BF-zh/element-theme-extended)
+MIT License © 2025 [uummxx](https://github.com/uummxx/element-theme-extended)
 

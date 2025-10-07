@@ -44,12 +44,12 @@
     "sass": "^1.93.2",
     "typescript": "^5.9.3"
   },
-  "homepage": "https://github.com/BF-zh/element-theme-extended",
+  "homepage": "https://github.com/uummxx/element-theme-extended",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BF-zh/element-theme-extended.git"
+    "url": "git+https://github.com/uummxx/element-theme-extended.git"
   },
   "bugs": {
-    "url": "https://github.com/BF-zh/element-theme-extended/issues"
+    "url": "https://github.com/uummxx/element-theme-extended/issues"
   }
 }
