@@ -1,5 +1,5 @@
 {
-  "name": "@bf/element-theme-extended",
+  "name": "@uummxx/element-theme-extended",
   "version": "0.0.1",
   "description": "Element Plus 主题扩展包，提供可定制的 SCSS 变量、暗黑/亮色模式支持，以及额外的 mixin，方便快速定制主题。",
   "type": "module",

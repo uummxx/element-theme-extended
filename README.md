@@ -1,4 +1,4 @@
-# @gi-bf/element-theme-extended
+# @uummxx/element-theme-extended
 
 > Element Plus 主题扩展包，提供可定制的 SCSS 变量、暗黑/亮色模式支持，以及额外的 mixin，方便快速定制 Element Plus 组件库主题。
 
@@ -19,19 +19,19 @@
 使用 `pnpm`：
 
 ```bash
-pnpm add @gi-bf/element-theme-extended
+pnpm add @uummxx/element-theme-extended
 ````
 
 使用 `npm`：
 
 ```bash
-npm install @gi-bf/element-theme-extended
+npm install @uummxx/element-theme-extended
 ```
 
 使用 `yarn`：
 
 ```bash
-yarn add @gi-bf/element-theme-extended
+yarn add @uummxx/element-theme-extended
 ```
 
 ---
@@ -42,7 +42,7 @@ yarn add @gi-bf/element-theme-extended
 
 ```scss
 // styles/element/index.scss
-@forward '@gi-bf/element-theme-extended/themes' with (
+@forward '@uummxx/element-theme-extended/themes' with (
     $themes:(
         theme-1:(
             primary:red,
@@ -57,13 +57,13 @@ yarn add @gi-bf/element-theme-extended
 // @use "element-plus/theme-chalk/src/index.scss" as *;
 
 // 同时使用亮色和暗色主题
-@use '@gi-bf/element-theme-extended/index.scss'; 
+@use '@uummxx/element-theme-extended/index.scss'; 
 
 // 只是用亮色
-// @use '@gi-bf/element-theme-extended/light.scss';
+// @use '@uummxx/element-theme-extended/light.scss';
 
 // 只使用暗色
-// @use '@gi-bf/element-theme-extended/dark.scss'
+// @use '@uummxx/element-theme-extended/dark.scss'
 
 ```
 ### 2. 在 TypeScript / JavaScript 中引入
@@ -92,7 +92,7 @@ toggleTheme('theme-1 dark') // 暗色
 ## 🔹 目录结构
 
 ```
-@gi-bf/element-theme-extended/
+@uummxx/element-theme-extended/
 ├─ src/
 │  ├─ index.scss      # SCSS 入口文件
 │  ├─ themes.scss     # 主题变量
@@ -116,5 +116,5 @@ toggleTheme('theme-1 dark') // 暗色
 
 ## 🔹 授权协议
 
-MIT License © 2025 [BF-zh]
+MIT License © 2025 [BF-zh](https://github.com/BF-zh/element-theme-extended)
 
