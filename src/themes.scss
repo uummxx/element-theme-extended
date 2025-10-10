@@ -1,36 +1,30 @@
-
-
 @use 'sass:map';
-
 
 // element-plus
 @use 'element-plus/theme-chalk/src/mixins/var' as *;
-@use 'element-plus/theme-chalk/src/mixins/mixins' as *;
-
-
-$themes:() !default;
+$themes: () !default;
 $themes: map.deep-merge(
   (
-    '':(
+    '': (
       'white': #ffffff,
       'black': #000000,
-      'primary':  #409eff,
-      'success':  #67c23a,
-      'warning':  #e6a23c,
-      'danger':  #f56c6c,
-      'error':  #f56c6c,
-      'info':  #909399
-    )
+      'primary': #409eff,
+      'success': #67c23a,
+      'warning': #e6a23c,
+      'danger': #f56c6c,
+      'error': #f56c6c,
+      'info': #909399,
+    ),
   ),
- $themes
+  $themes
 );
 
-$color-white: map.get($themes,'', 'white') !default;
-$color-black: map.get($themes,'', 'black') !default;
-$color-primary: map.get($themes,'', 'primary') !default;
-$color-success: map.get($themes,'', 'success') !default;
-$color-warning: map.get($themes,'', 'warning') !default;
-$color-danger: map.get($themes,'', 'danger') !default;
-$color-error: map.get($themes,'', 'error') !default;
-$color-info: map.get($themes,'', 'info') !default;
-$types:primary, success, warning, danger, error, info;
+$color-white: map.get($themes, '', 'white') !default;
+$color-black: map.get($themes, '', 'black') !default;
+$color-primary: map.get($themes, '', 'primary') !default;
+$color-success: map.get($themes, '', 'success') !default;
+$color-warning: map.get($themes, '', 'warning') !default;
+$color-danger: map.get($themes, '', 'danger') !default;
+$color-error: map.get($themes, '', 'error') !default;
+$color-info: map.get($themes, '', 'info') !default;
+$types: primary, success, warning, danger, error, info;

@@ -6,11 +6,11 @@
 
 ## 🔹 功能特性
 
-- 完全兼容 **Element Plus** 的 `theme-chalk` 主题  
-- 提供 **暗黑/亮色模式**支持  
-- 可自定义 SCSS 变量，轻松修改主色、成功色、警告色、危险色等  
-- 内置 **主题 mixin**，方便快速生成组件样式  
-- 支持 **TypeScript/JavaScript** 和 **Sass** 引入  
+- 完全兼容 **Element Plus** 的 `theme-chalk` 主题
+- 提供 **暗黑/亮色模式**支持
+- 可自定义 SCSS 变量，轻松修改主色、成功色、警告色、危险色等
+- 内置 **主题 mixin**，方便快速生成组件样式
+- 支持 **TypeScript/JavaScript** 和 **Sass** 引入
 
 ---
 
@@ -43,36 +43,35 @@ yarn add @uummxx/element-theme-extended
 ```scss
 // styles/element/index.scss
 @forward '@uummxx/element-theme-extended/themes' with (
-    $themes:(
-        theme-1:(
-            primary:red,
-            success:green
-        ),
-        theme-2:(
-            primary:#ccc
-        )
-    )
+  $themes: (
+    theme-1: (
+      primary: red,
+      success: green,
+    ),
+    theme-2: (
+      primary: #ccc,
+    ),
+  )
 );
 // 如果你想导入element-plus所有样式:
 // @use "element-plus/theme-chalk/src/index.scss" as *;
 
 // 同时使用亮色和暗色主题
-@use '@uummxx/element-theme-extended/index.scss'; 
+@use '@uummxx/element-theme-extended/index.scss';
 
 // 只是用亮色
 // @use '@uummxx/element-theme-extended/light.scss';
 
 // 只使用暗色
 // @use '@uummxx/element-theme-extended/dark.scss'
-
 ```
 ### 2. 在 TypeScript / JavaScript 中引入
 
 ```ts
-import { createApp } from 'vue'
-import './styles/element/index.scss'
 import ElementPlus from 'element-plus'
+import { createApp } from 'vue'
 import App from './App.vue'
+import './styles/element/index.scss'
 
 const app = createApp(App)
 app.use(ElementPlus)
@@ -81,8 +80,8 @@ app.use(ElementPlus)
 ```
 ### 3.  主题切换
 ```ts
-function toggleTheme(theme:string){
-    document.documentElement.classList.add(theme)
+function toggleTheme(theme: string) {
+  document.documentElement.classList.add(theme)
 }
 
 toggleTheme('theme-1') // 亮色
@@ -117,4 +116,3 @@ toggleTheme('theme-1 dark') // 暗色
 ## 🔹 授权协议
 
 MIT License © 2025 [uummxx](https://github.com/uummxx/element-theme-extended)
-

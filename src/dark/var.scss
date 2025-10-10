@@ -2,51 +2,11 @@
 @use 'sass:math';
 @use 'sass:color';
 
-// @use 'element-plus/theme-chalk/src/common/var.scss' as common;
 @use 'element-plus/theme-chalk/src/mixins/mixins.scss' as *;
 @use 'element-plus/theme-chalk/src/color/index.scss' as *;
 @use 'element-plus/theme-chalk/src/mixins/function.scss' as *;
 
-
-@use '../themes.scss' as themes;
 @use '../mixins.scss' as *;
-$default-themes:themes.$themes;
-$types:themes.$types;
-$themes: () !default;
-@each $class, $_ in $default-themes  {
-  @each $type in $types{
-    $color:map.get($default-themes,$class,$type);
-    @if $color !=null{
-      $themes: map.deep-merge(($class: ($type: $color)),$themes)!global}
-    }
-}
-
-
-// https://sass-lang.com/documentation/values/maps#immutability
-@mixin f-set-color-mix-level(
-  $type,
-  $number,
-  $mode: 'light',
-  $mix-color: $color-white,
-  $theme: ''
-) {
-  $themes: map.deep-merge(
-    (
-      $theme: (
-        '#{$type}-#{$mode}-#{$number}':
-          roundColor(
-            color.mix(
-              $mix-color,
-              map.get($themes,$theme, $type),
-              math.percentage(math.div($number, 10))
-            )
-          ),
-      ),
-    ),
-    $themes
-  ) !global;
-}
-
 
 $bg-color: () !default;
 $bg-color: map.merge(
@@ -57,17 +17,6 @@ $bg-color: map.merge(
   ),
   $bg-color
 );
-
-// dark-mode
-
-@each $class, $theme in $themes {
-  @each $type,$color in $theme {
-      @for $i from 1 through 9 {
-        @include f-set-color-mix-level($type, $i, 'light',map.get($bg-color,''),$class);
-      }
-    @include f-set-color-mix-level($type, 2, 'dark', themes.$color-white, $class);
-  }
-};
 
 // border
 $border-color-base: #f5f8ff;

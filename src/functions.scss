@@ -1,0 +1,46 @@
+@use 'sass:map';
+@use 'sass:color';
+@use 'sass:math';
+
+@use './themes.scss' as *;
+@function roundColor($color) {
+  $r: math.round(color.channel($color, 'red'));
+  $g: math.round(color.channel($color, 'green'));
+  $b: math.round(color.channel($color, 'blue'));
+  $a: color.channel($color, 'alpha');
+  @return rgba($r, $g, $b, $a);
+}
+
+@function f-set-color-mix-level($type, $color, $level, $mix-color, $mode: 'light') {
+  $percentage: math.percentage(math.div($level, 10));
+  $mixed-color: color.mix($mix-color, $color, $percentage);
+  @return ('#{$type}-#{$mode}-#{$level}': roundColor($mixed-color));
+}
+
+@function generate-color-vars($themes, $mix-color, $is-dark: false) {
+  $default: ();
+  @each $theme, $colors in $themes {
+    $theme-map: ();
+    @each $type in $types {
+      $color: map.get($colors, $type);
+      @if ($color != null) {
+        // 生成 light 模式
+        $theme-map: map.merge(
+          $theme-map,
+          (
+            $type: $color,
+          )
+        );
+        @for $level from 1 through 9 {
+          $mix-map: f-set-color-mix-level($type, $color, $level, $mix-color, 'light');
+          $theme-map: map.deep-merge($theme-map, $mix-map);
+        }
+        // 生成 dark 模式
+        $mix-map: f-set-color-mix-level($type, $color, 2, $mix-color, 'dark');
+        $theme-map: map.deep-merge($theme-map, $mix-map);
+      }
+    }
+    $default: map.set($default, $theme, $theme-map);
+  }
+  @return $default;
+}

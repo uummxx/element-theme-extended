@@ -1,28 +1,19 @@
 {
   "name": "@uummxx/element-theme-extended",
-  "version": "0.0.2",
-  "description": "Element Plus 主题扩展包，提供可定制的 SCSS 变量、暗黑/亮色模式支持，以及额外的 mixin，方便快速定制主题。",
   "type": "module",
-  "main": "src/main.ts",
+  "version": "0.0.2",
+  "packageManager": "pnpm@10.14.0",
+  "description": "Element Plus 主题扩展包，提供可定制的 SCSS 变量、暗黑/亮色模式支持，以及额外的 mixin，方便快速定制主题。",
   "style": "src/index.scss",
-  "exports": {
-    ".": "./src/main.ts",
-    "./themes": "./src/themes.scss",
-    "./mixins": "./src/mixins.scss",
-    "./index": "./src/index.scss",
-    "./light": "./src/var.scss",
-    "./dark": "./src/dark/css_var.scss",
-    "./themes.scss": "./src/themes.scss",
-    "./mixins.scss": "./src/mixins.scss",
-    "./light.scss": "./src/var.scss",
-    "./dark.scss": "./src/dark/css_var.scss",
-    "./index.scss": "./src/index.scss"
+  "author": "258180747@qq.com",
+  "license": "MIT",
+  "homepage": "https://github.com/uummxx/element-theme-extended",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uummxx/element-theme-extended.git"
   },
-  "files": [
-    "src"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bugs": {
+    "url": "https://github.com/uummxx/element-theme-extended/issues"
   },
   "keywords": [
     "vue",
@@ -36,20 +27,33 @@
     "custom-theme",
     "ui-library"
   ],
-  "author": "258180747@qq.com",
-  "license": "ISC",
-  "packageManager": "pnpm@10.14.0",
+  "exports": {
+    ".": "./src/main.ts",
+    "./themes": "./src/themes.scss",
+    "./mixins": "./src/mixins.scss",
+    "./index": "./src/index.scss",
+    "./light": "./src/var.scss",
+    "./dark": "./src/dark/css_var.scss",
+    "./themes.scss": "./src/themes.scss",
+    "./mixins.scss": "./src/mixins.scss",
+    "./light.scss": "./src/var.scss",
+    "./dark.scss": "./src/dark/css_var.scss",
+    "./index.scss": "./src/index.scss"
+  },
+  "main": "src/main.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
   "devDependencies": {
+    "@antfu/eslint-config": "^5.4.1",
     "element-plus": "^2.11.4",
+    "eslint": "^9.37.0",
+    "eslint-plugin-format": "^1.0.2",
     "sass": "^1.93.2",
     "typescript": "^5.9.3"
-  },
-  "homepage": "https://github.com/uummxx/element-theme-extended",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/uummxx/element-theme-extended.git"
-  },
-  "bugs": {
-    "url": "https://github.com/uummxx/element-theme-extended/issues"
   }
 }
