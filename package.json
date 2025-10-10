@@ -1,7 +1,7 @@
 {
   "name": "@uummxx/element-theme-extended",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "packageManager": "pnpm@10.14.0",
   "description": "Element Plus 主题扩展包，提供可定制的 SCSS 变量、暗黑/亮色模式支持，以及额外的 mixin，方便快速定制主题。",
   "style": "src/index.scss",
