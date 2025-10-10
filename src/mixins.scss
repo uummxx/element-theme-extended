@@ -46,6 +46,7 @@
   }
   html#{$mode} {
     // hex colors
+    color-scheme: if($is-dark, dark, light);
     @if ($is-dark) {
       @each $type in (primary, success, warning, danger, error, info) {
         @include f-set-css-color-rgb($themes, $type, '');

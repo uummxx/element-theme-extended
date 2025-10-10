@@ -80,12 +80,16 @@ app.use(ElementPlus)
 ```
 ### 3.  主题切换
 ```ts
-function toggleTheme(theme: string) {
-  document.documentElement.classList.add(theme)
-}
+import { useThemes } from '@uummxx/element-theme-extended/utils'
 
-toggleTheme('theme-1') // 亮色
-toggleTheme('theme-1 dark') // 暗色
+const { toggleTheme, toggleDark } = useThemes({ themes: ['theme-1', 'theme-2'] })
+
+toggleTheme('theme-1') // 主题1
+toggleTheme('theme-2') // 主题2
+toggleTheme('other-theme') // '切换失败' 主题不存在
+toggleDark() // 亮色/暗色切换
+toggleDark(true) // 暗色主题
+toggleDark(false) // 亮色主题
 ```
 
 ## 🔹 目录结构
@@ -97,10 +101,13 @@ toggleTheme('theme-1 dark') // 暗色
 │  ├─ themes.scss     # 主题变量
 │  ├─ mixins.scss     # 主题 mixin
 │  ├─ var.scss        # 亮色模式变量
+│  ├─ function.scss   # 生成主题函数
+│  ├─ main.ts         # TS/JS 入口
+│  ├─ utils.ts        # TS/JS 工具函数
 │  └─ dark/
 │     ├─ var.scss     # 暗色主题变量
 │     └─ css_var.scss # 暗黑模式变量
-├─ src/main.ts        # TS/JS 入口
+├─ eslint.config.mjs  # eslint 配置
 ├─ package.json
 └─ README.md
 ```

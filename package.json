@@ -29,6 +29,7 @@
   ],
   "exports": {
     ".": "./src/main.ts",
+    "./utils": "./src/utils.ts",
     "./themes": "./src/themes.scss",
     "./mixins": "./src/mixins.scss",
     "./index": "./src/index.scss",
